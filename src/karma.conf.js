@@ -99,7 +99,7 @@ module.exports = function(config) {
         singleRun: true,
 
         parallelOptions: {
-            executors: 2, // Defaults to cpu-count - 1
+            executors: 2, // Defaults to cpu-count - 1 // or use a % of available resources , i.e.: executors: (Math.ceil(require('os').cpus().length / 2)),
             shardStrategy: 'round-robin'
         }
     });
