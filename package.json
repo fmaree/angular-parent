@@ -14,7 +14,9 @@
     "build:prod": "node --max-old-space-size=2048 ./node_modules/@angular/cli/bin/ng build --configuration=production",
     "test": "ng test --watch=false --code-coverage",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "publishConfig": {
     "registry": "https://nexus.wideriver.org.uk/repository/npm-snapshots/"
@@ -42,7 +44,8 @@
     "popper.js": "^1.16.0",
     "rxjs": "^6.5.3",
     "rxjs-compat": "^6.5.3",
-    "zone.js": "^0.10.2"
+    "zone.js": "^0.10.2",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.803.12",
@@ -68,5 +71,6 @@
     "ts-node": "~8.4.1",
     "tslint": "^5.20.1",
     "typescript": "~3.5.3"
-  }
+  },
+  "snyk": true
 }
